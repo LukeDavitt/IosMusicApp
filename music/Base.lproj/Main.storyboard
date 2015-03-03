@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="music" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ddr-XK-G9J">
+                                <rect key="frame" x="16" y="40" width="288" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4rH-UU-y1F"/>
+                                    <constraint firstAttribute="width" constant="288" id="P05-k4-4C6"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwO-wX-0g7">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="6hI-Yt-s2F"/>
+                                    <constraint firstAttribute="height" constant="44" id="Bad-Lv-omG"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Vjh-kB-uwg">
+                                        <connections>
+                                            <action selector="clickPrevious:" destination="vXZ-lx-hvc" id="A4C-At-g9v"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="54" style="plain" systemItem="fixedSpace" id="KQ1-KV-Tfj"/>
+                                    <barButtonItem style="plain" systemItem="stop" id="WB8-0b-8ml">
+                                        <connections>
+                                            <action selector="clickStop:" destination="vXZ-lx-hvc" id="3CU-1b-5RS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="55" style="plain" systemItem="fixedSpace" id="Fvi-EQ-YyR"/>
+                                    <barButtonItem style="plain" systemItem="play" id="oR9-YL-I08">
+                                        <connections>
+                                            <action selector="clickPlay:" destination="vXZ-lx-hvc" id="hvw-kl-vGP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="68" style="plain" systemItem="fixedSpace" id="MsM-V4-7oO"/>
+                                    <barButtonItem systemItem="fastForward" id="jdZ-Sc-a5M">
+                                        <connections>
+                                            <action selector="clickNext:" destination="vXZ-lx-hvc" id="yBz-F1-gdg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wqi-Sn-gux">
+                                <rect key="frame" x="14" y="201" width="292" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="29z-Vg-AO4"/>
+                                    <constraint firstAttribute="height" constant="30" id="LRL-xa-aa1"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="adjustVolume:" destination="vXZ-lx-hvc" eventType="valueChanged" id="WRn-wp-1nN"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ddr-XK-G9J" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="5PX-1f-pnQ"/>
+                            <constraint firstAttribute="centerX" secondItem="vwO-wX-0g7" secondAttribute="centerX" id="6XQ-lC-TXL"/>
+                            <constraint firstAttribute="centerX" secondItem="ddr-XK-G9J" secondAttribute="centerX" id="EVA-Zm-5iM"/>
+                            <constraint firstItem="Wqi-Sn-gux" firstAttribute="top" secondItem="ddr-XK-G9J" secondAttribute="bottom" constant="32" id="PWX-VM-USm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="vwO-wX-0g7" secondAttribute="bottom" id="bOw-Ax-beZ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="vwO-wX-0g7" secondAttribute="bottom" id="bnB-oH-BaT"/>
+                            <constraint firstAttribute="centerX" secondItem="Wqi-Sn-gux" secondAttribute="centerX" id="xTJ-f2-WGZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="ddr-XK-G9J" id="EvV-Ci-AYI"/>
+                        <outlet property="volumeSlider" destination="Wqi-Sn-gux" id="861-Nv-AHo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="burger.jpg" width="500" height="857"/>
+    </resources>
+</document>
